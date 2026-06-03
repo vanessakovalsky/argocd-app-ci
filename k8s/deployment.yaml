@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: ghcr.io/vanessakovalsky/argocd-app-ci:73553149b425baecdd48ed1c207f9ee29bf4667d
+        image: ghcr.io/vanessakovalsky/argocd-app-ci:89346a3b2072dc822ae6d480bbf2381dbbcc5c75
         ports:
         - containerPort: 8080
 ---
