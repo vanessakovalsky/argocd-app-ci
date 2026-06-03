@@ -36,7 +36,7 @@ jobs:
       env:
         CD_REPO_TOKEN: ${{ secrets.CD_REPO_TOKEN }}
       run: |
-        git clone https://x-access-token:${CD_REPO_TOKEN}@github.com/${{ github.repository }}-cd.git cd-repo
+        git clone https://x-access-token:${CD_REPO_TOKEN}@github.com/${{ github.repository }}.git cd-repo
         cd cd-repo
         sed -i "s|image:.*|image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}|" k8s/deployment.yaml
         git config user.name "GitHub Actions"
