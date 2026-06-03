@@ -17,6 +17,17 @@ spec:
         image: ghcr.io/vanessakovalsky/argocd-app-ci:3f14a6af77f622b575da579657b9b3d2f55c917a
         ports:
         - containerPort: 8080
+        env:
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: db-password
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: api-key
 ---
 apiVersion: v1
 kind: Service
